@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Home - Smart Complaint Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            
+            <h2>Smart Complaint</h2>
+        </div>
+
+        <nav>
+            <a href="home.html" class="active">Home</a>
+
+            <a href="submit-complaint.html">
+                Submit Complaint
+            </a>
+
+            <a href="my-complaints.html">
+                 My Complaints
+            </a>
+
+            <a href="complaint-status.html">
+                 Complaint Status
+            </a>
+
+            <a href="complaint-history.html">
+                 Complaint History
+            </a>
+
+            <a href="profile.html">
+                 Profile
+            </a>
+
+            <a href="index.html">
+                 Logout
+            </a>
+        </nav>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="top-header">
+
+            <div>
+                <h1>Welcome Back! </h1>
+                <p>Smart Service Request & Complaint Management System</p>
+            </div>
+
+            <div class="user">
+                Student
+            </div>
+
+        </header>
+
+
+        <!-- Welcome Banner -->
+        <section class="welcome-card">
+
+            <h2>Manage Your Complaints Easily</h2>
+
+            <p>
+                Submit complaints, track their status and
+                get smart predictions for faster resolution.
+            </p>
+
+            <a href="submit-complaint.html" class="btn">
+                + Submit Complaint
+            </a>
+
+        </section>
+
+
+        <!-- Complaint Statistics -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <span></span>
+                <h3>Total Complaints</h3>
+                <strong>12</strong>
+            </div>
+
+            <div class="stat-card">
+                <span></span>
+                <h3>Pending</h3>
+                <strong>4</strong>
+            </div>
+
+            <div class="stat-card">
+                <span></span>
+                <h3>In Progress</h3>
+                <strong>3</strong>
+            </div>
+
+            <div class="stat-card">
+                <span></span>
+                <h3>Resolved</h3>
+                <strong>5</strong>
+            </div>
+
+        </section>
+
+
+        <!-- Two Columns -->
+        <section class="dashboard-grid">
+
+            <!-- Quick Actions -->
+            <div class="dashboard-card">
+
+                <h2> Quick Actions</h2>
+
+                <a href="submit-complaint.html">
+                    Submit New Complaint
+                </a>
+
+                <a href="my-complaints.html">
+                     View My Complaints
+                </a>
+
+                <a href="complaint-status.html">
+                     Check Complaint Status
+                </a>
+
+            </div>
+
+
+            <!-- Smart Prediction -->
+            <div class="dashboard-card prediction">
+
+                <h2> Smart Prediction</h2>
+
+                <p>
+                    Our ML system predicts complaint priority
+                    and expected resolution time.
+                </p>
+
+                <div class="prediction-box">
+
+                    <h3>Example Prediction</h3>
+
+                    <p>
+                        Category: Electrical
+                    </p>
+
+                    <p>
+                        Priority: <b>High</b>
+                    </p>
+
+                    <p>
+                        Expected Resolution:
+                        <b>2 Hours</b>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Recent Complaints -->
+        <section class="recent">
+
+            <h2> Recent Complaints</h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Complaint ID</th>
+                        <th>Category</th>
+                        <th>Room</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>#CMP001</td>
+                        <td>Electrical</td>
+                        <td>201</td>
+                        <td>Pending</td>
+                    </tr>
+
+                    <tr>
+                        <td>#CMP002</td>
+                        <td>Plumbing</td>
+                        <td>305</td>
+                        <td>In Progress</td>
+                    </tr>
+
+                    <tr>
+                        <td>#CMP003</td>
+                        <td>Cleaning</td>
+                        <td>102</td>
+                        <td>Resolved</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

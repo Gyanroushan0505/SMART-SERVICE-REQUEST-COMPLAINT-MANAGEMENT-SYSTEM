@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Submit Complaint - Smart Complaint Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>Smart Complaint</h2>
+        </div>
+
+        <nav>
+            <a href="home.html">Home</a>
+
+            <a href="submit-complaint.html" class="active">
+                Submit Complaint
+            </a>
+
+            <a href="my-complaints.html">
+                My Complaints
+            </a>
+
+            <a href="complaint-status.html">
+                Complaint Status
+            </a>
+
+            <a href="complaint-history.html">
+                Complaint History
+            </a>
+
+            <a href="profile.html">
+                Profile
+            </a>
+
+            <a href="html.html">
+                Logout
+            </a>
+        </nav>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="top-header">
+
+            <div>
+                <h1>Submit Complaint</h1>
+                <p>Report your hostel problem</p>
+            </div>
+
+            <div class="student-info">
+                Student
+            </div>
+
+        </header>
+
+
+        <!-- Complaint Details -->
+        <section class="complaint-form full-width-form">
+
+            <h2>Complaint Details</h2>
+
+            <p>Please provide the details of your complaint below.</p>
+
+
+            <form id="complaintForm">
+
+                <!-- Student ID -->
+                <div class="form-group">
+                    <label for="studentId">Student ID</label>
+
+                    <input
+                        type="text"
+                        id="studentId"
+                        placeholder="Enter your Student ID"
+                        required
+                    >
+                </div>
+
+
+                <!-- Floor -->
+                <div class="form-group">
+                    <label for="floor">Floor</label>
+
+                    <select id="floor" required>
+
+                        <option value="">Select Floor</option>
+
+                        <option value="Ground Floor">
+                            Ground Floor
+                        </option>
+
+                        <option value="1st Floor">
+                            1st Floor
+                        </option>
+
+                        <option value="2nd Floor">
+                            2nd Floor
+                        </option>
+
+                        <option value="3rd Floor">
+                            3rd Floor
+                        </option>
+
+                    </select>
+                </div>
+
+
+                <!-- Room Number -->
+                <div class="form-group">
+                    <label for="roomNumber">Room Number</label>
+
+                    <input
+                        type="text"
+                        id="roomNumber"
+                        placeholder="Enter Room Number"
+                        required
+                    >
+                </div>
+
+
+                <!-- Category -->
+                <div class="form-group">
+                    <label for="category">Complaint Category</label>
+
+                    <select id="category" required>
+
+                        <option value="">Select Category</option>
+
+                        <option value="Electrical">
+                            Electrical
+                        </option>
+
+                        <option value="Plumbing">
+                            Plumbing
+                        </option>
+
+                        <option value="Cleaning">
+                            Cleaning
+                        </option>
+
+                        <option value="Furniture">
+                            Furniture
+                        </option>
+
+                        <option value="Internet">
+                            Internet
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+                </div>
+
+
+                <!-- Priority -->
+                <div class="form-group">
+                    <label for="priority">Priority</label>
+
+                    <select id="priority" required>
+
+                        <option value="">Select Priority</option>
+
+                        <option value="High">
+                            High
+                        </option>
+
+                        <option value="Medium">
+                            Medium
+                        </option>
+
+                        <option value="Low">
+                            Low
+                        </option>
+
+                    </select>
+                </div>
+
+
+                <!-- Description -->
+                <div class="form-group">
+
+                    <label for="description">
+                        Complaint Description
+                    </label>
+
+                    <textarea
+                        id="description"
+                        placeholder="Describe your problem in detail..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- Submit Button -->
+                <button
+                    type="submit"
+                    class="submit-btn"
+                >
+                    Submit Complaint
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Complaint Status - Smart Complaint Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            
+            <h2>Smart Complaint</h2>
+        </div>
+
+        <nav>
+
+            <a href="home.html"> Home</a>
+
+            <a href="submit-complaint.html">
+                 Submit Complaint
+            </a>
+
+            <a href="my-complaints.html">
+                 My Complaints
+            </a>
+
+            <a href="complaint-status.html" class="active">
+                 Complaint Status
+            </a>
+
+            <a href="complaint-history.html">
+                 Complaint History
+            </a>
+
+            <a href="profile.html">
+                 Profile
+            </a>
+
+            <a href="html.html">
+                 Logout
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="top-header">
+
+            <div>
+                <h1>Complaint Status</h1>
+                <p>Track the progress of your complaint</p>
+            </div>
+
+            <div class="student-info">
+                 Student
+            </div>
+
+        </header>
+
+
+        <!-- Status Card -->
+        <section class="complaint-form">
+
+            <h2> Complaint Details</h2>
+
+            <div class="form-group">
+
+                <label>Complaint ID</label>
+
+                <input
+                    type="text"
+                    value="C001"
+                    readonly
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Category</label>
+
+                <input
+                    type="text"
+                    value="Electrical"
+                    readonly
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Room Number</label>
+
+                <input
+                    type="text"
+                    value="101"
+                    readonly
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Current Status</label>
+
+                <input
+                    type="text"
+                    value="Pending"
+                    readonly
+                >
+
+            </div>
+
+
+            <!-- Complaint Progress -->
+
+            <h2>Complaint Progress</h2>
+
+            <div class="status-progress">
+
+                <div class="status-step active">
+                    <div class="status-circle">✓</div>
+                    <p>Complaint<br>Submitted</p>
+                </div>
+
+
+                <div class="status-line"></div>
+
+
+                <div class="status-step">
+                    <div class="status-circle">2</div>
+                    <p>In<br>Progress</p>
+                </div>
+
+
+                <div class="status-line"></div>
+
+
+                <div class="status-step">
+                    <div class="status-circle">3</div>
+                    <p>Resolved</p>
+                </div>
+
+            </div>
+
+
+            <!-- Smart Prediction -->
+
+            <div class="prediction-box">
+
+                <h3> Smart Prediction</h3>
+
+                <p>
+                    Based on the complaint category, the estimated
+                    resolution time is:
+                </p>
+
+                <strong> Approximately 2 Hours</strong>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
