@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Complaint Status - Smart Complaint Management System</title>
+
+    <link rel="stylesheet" href="style.css?v=20261110-student-ui">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f3f7fd;
+            color: #172d50;
+        }
+
+        .main-content {
+            padding: 28px 30px;
+        }
+
+        .top-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .top-header h1 {
+            color: #21479e;
+            font-size: 32px;
+            margin: 0 0 6px;
+        }
+
+        .top-header p {
+            margin: 0;
+            color: #637795;
+            font-size: 16px;
+        }
+
+        .student-info {
+            background: #e4edff;
+            color: #21479e;
+            border-radius: 20px;
+            padding: 10px 18px;
+            font-weight: bold;
+        }
+
+        .complaint-form {
+            background: #fff;
+            border-radius: 18px;
+            padding: 28px 30px;
+            max-width: 1200px;
+            box-shadow: 0 8px 30px rgba(31, 65, 120, 0.08);
+        }
+
+        .section-title {
+            color: #173f95;
+            font-size: 25px;
+            margin: 0 0 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e2ebff;
+        }
+
+        #statusMessage {
+            color: #536987;
+            margin-bottom: 22px;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px 30px;
+        }
+
+        .form-group {
+            margin: 0;
+            min-width: 0;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            color: #40577c;
+            margin-bottom: 9px;
+            font-size: 16px;
+        }
+
+        .form-group input {
+            width: 100%;
+            height: 56px;
+            padding: 12px 16px;
+            border: 1px solid #dce7fa;
+            border-radius: 8px;
+            background: #f5f8fd;
+            color: #172d50;
+            font-size: 17px;
+        }
+
+        .status-input {
+            font-weight: bold;
+        }
+
+        .status-input.pending {
+            color: #bd6500;
+            background: #fff8e8;
+            border-color: #ffe0a1;
+        }
+
+        .status-input.assigned {
+            color: #245bc7;
+            background: #edf4ff;
+        }
+
+        .status-input.progress {
+            color: #a66300;
+            background: #fff8e8;
+        }
+
+        .status-input.resolved {
+            color: #16834d;
+            background: #e9fff2;
+        }
+
+        .status-input.rejected {
+            color: #c12f3d;
+            background: #fff0f1;
+        }
+
+        .progress-section {
+            margin-top: 32px;
+            padding-top: 25px;
+            border-top: 2px solid #e2ebff;
+        }
+
+        .progress-section h2 {
+            color: #173f95;
+            font-size: 25px;
+            margin: 0 0 28px;
+        }
+
+        .progress-layout {
+            display: grid;
+            grid-template-columns: 1.7fr 1fr;
+            gap: 28px;
+            align-items: center;
+        }
+
+        .status-progress {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .status-step {
+            flex: 1;
+            text-align: center;
+            min-width: 0;
+        }
+
+        .status-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #e2e4e9;
+            color: #53617b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+            font-size: 25px;
+            font-weight: bold;
+            border: 3px solid transparent;
+        }
+
+        .status-step.done .status-circle {
+            background: #20b873;
+            color: white;
+        }
+
+        .status-step.current .status-circle {
+            background: #fff1c8;
+            color: #c87800;
+            border-color: #ffb326;
+        }
+
+        .status-step p {
+            font-size: 15px;
+            font-weight: bold;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .status-step.current p {
+            color: #bd7200;
+        }
+
+        .status-step.done p {
+            color: #177d4d;
+        }
+
+        .status-step small {
+            display: block;
+            margin-top: 7px;
+            color: #647895;
+            font-weight: normal;
+            font-size: 13px;
+        }
+
+        .status-line {
+            flex: 0.65;
+            height: 3px;
+            background: #dce2ec;
+            margin-top: 29px;
+        }
+
+        .status-line.done {
+            background: #20b873;
+        }
+
+        .update-details {
+            border-left: 2px solid #e0e9fc;
+            padding-left: 25px;
+        }
+
+        .update-item {
+            display: flex;
+            gap: 13px;
+            margin-bottom: 22px;
+            line-height: 1.6;
+        }
+
+        .update-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .update-icon {
+            color: #245bc7;
+            font-size: 21px;
+        }
+
+        .update-item strong {
+            display: block;
+            color: #244a8c;
+            margin-bottom: 3px;
+        }
+
+        .update-item span {
+            overflow-wrap: anywhere;
+        }
+
+        .prediction-box {
+            margin-top: 30px;
+            padding: 24px;
+            border-left: 6px solid #2864ff;
+            border-radius: 14px;
+            background: #eef4ff;
+        }
+
+        .prediction-box h3 {
+            color: #173f95;
+            margin: 0 0 12px;
+            font-size: 21px;
+        }
+
+        .prediction-box p {
+            margin: 0 0 14px;
+            color: #415a80;
+            line-height: 1.6;
+        }
+
+        .prediction-time {
+            display: inline-block;
+            padding: 10px 17px;
+            border-radius: 25px;
+            background: #fff0c5;
+            color: #b75c00;
+            font-weight: bold;
+        }
+
+        @media (max-width: 850px) {
+            .main-content {
+                padding: 20px 15px;
+            }
+
+            .complaint-form {
+                padding: 22px 18px;
+            }
+
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .progress-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .update-details {
+                border-left: none;
+                border-top: 2px solid #e0e9fc;
+                padding: 20px 0 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .top-header h1 {
+                font-size: 25px;
+            }
+
+            .top-header {
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .student-info {
+                font-size: 12px;
+                padding: 8px 10px;
+            }
+
+            .status-circle {
+                width: 43px;
+                height: 43px;
+                font-size: 19px;
+            }
+
+            .status-line {
+                margin-top: 20px;
+            }
+
+            .status-step p {
+                font-size: 12px;
+            }
+
+            .section-title,
+            .progress-section h2 {
+                font-size: 22px;
+            }
+        }
+    </style>
+
+    <style>
+      .tracking-board {max-width:1180px;margin:0 auto;background:#fff;border-radius:22px;padding:30px;box-shadow:0 12px 40px rgba(35,65,105,.08)}
+      .tracking-heading,.tracking-section-heading{display:flex;justify-content:space-between;align-items:center;gap:16px}
+      .tracking-eyebrow{font-size:10px;letter-spacing:1.6px;font-weight:800;color:#66809e}
+      .tracking-heading .section-title{margin:6px 0}
+      .tracking-heading p{color:#718198;font-size:13px}
+      .tracking-status.resolved{background:#e4f7eb;color:#167347}
+      .tracking-status{padding:9px 15px;border-radius:30px;background:#eaf2ff;color:#2862a4;font-size:12px;font-weight:800}
+      .tracking-summary{display:flex;justify-content:space-between;gap:18px;padding:23px;border-radius:17px;background:linear-gradient(120deg,#24466b,#376b99);color:#fff;margin:24px 0 16px}
+      .tracking-summary span{display:block;color:#c9dced;font-size:10px;letter-spacing:1px;font-weight:700}
+      .tracking-summary strong{display:block;font-size:25px;margin:5px 0}
+      .tracking-summary p{margin:0;color:#e1edf7;font-size:13px;max-width:620px}
+      .tracking-summary-date{min-width:145px;border-left:1px solid #ffffff40;padding-left:20px}
+      .tracking-summary-date strong{font-size:16px;margin-top:10px}
+      .tracking-details-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+      .tracking-details-grid>div{padding:14px;border:1px solid #e7edf4;border-radius:12px;background:#fbfcfe}
+      .tracking-details-grid span,.assigned-staff-copy span{display:block;color:#8290a2;font-size:10px;font-weight:800;letter-spacing:.7px}
+      .tracking-details-grid strong{display:block;color:#30465f;font-size:13px;margin-top:7px;overflow-wrap:anywhere}
+      .assigned-staff-card{display:flex;align-items:center;gap:14px;margin-top:16px;padding:17px;border:1px solid #e3ebf3;border-radius:15px;background:#f9fbfd}
+      .assigned-staff-icon{width:45px;height:45px;display:grid;place-items:center;border-radius:13px;background:#e7eff8;color:#315f8e;font-size:22px}
+      .assigned-staff-copy{flex:1}.assigned-staff-copy strong{display:block;margin:4px 0;color:#2b4561}.assigned-staff-copy small{color:#7a899b}
+      .staff-assignment-badge.is-assigned{background:#e2f6e9;color:#167347}
+      .staff-assignment-badge{font-size:11px;font-weight:800;color:#8a6a2b;background:#fff4d9;padding:8px 11px;border-radius:30px}
+      .tracking-progress-section{margin-top:30px}.tracking-section-heading h2{margin:5px 0 18px;color:#274361}
+      .progress-count{font-size:12px;font-weight:800;color:#61758d}
+      .tracking-step-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+      .tracking-step{position:relative;min-height:190px;padding:16px 13px;border:1px solid #e4eaf1;border-radius:15px;background:#fbfcfe;transition:.2s}
+      .tracking-step-number{font-size:10px;font-weight:800;color:#9aa7b6}
+      .tracking-step-icon{width:39px;height:39px;display:grid;place-items:center;margin:12px 0;border-radius:12px;background:#edf1f5;color:#8a98a8;font-size:19px;font-weight:800}
+      .tracking-step h3{margin:0 0 7px;color:#465a70;font-size:13px}
+      .tracking-step p{min-height:35px;margin:0;color:#8290a0;font-size:11px;line-height:1.5}
+      .tracking-step-state{display:inline-block;margin-top:13px;padding:5px 9px;border-radius:20px;background:#edf1f5;color:#8290a0;font-size:10px;font-weight:800}
+      .tracking-step.done{border-color:#b8e5cc;background:#f4fcf7}
+      .tracking-step.done .tracking-step-icon{background:#d9f4e4;color:#16834d}
+      .tracking-step.done h3{color:#167347}.tracking-step.done .tracking-step-state{background:#dff5e8;color:#167347}
+      .tracking-step.current{border:1.5px solid #7fb0e5;background:#f2f8ff;box-shadow:0 7px 20px rgba(55,112,173,.08)}
+      .tracking-step.current .tracking-step-icon{background:#dcecff;color:#2869ad}
+      .tracking-step.current h3{color:#245d99}.tracking-step.current .tracking-step-state{background:#dcecff;color:#245d99}
+      /* Pending and Staff Assigned are confirmed milestones in this workflow. */
+      .tracking-step.current.pending-current,.tracking-step.current.assigned-current{border:1.5px solid #a9dfbd;background:#f1fbf5;box-shadow:0 7px 20px rgba(28,132,77,.07)}
+      .tracking-step.current.pending-current .tracking-step-icon,.tracking-step.current.assigned-current .tracking-step-icon{background:#d9f4e4;color:#16834d}
+      .tracking-step.current.pending-current h3,.tracking-step.current.assigned-current h3{color:#167347}
+      .tracking-step.current.pending-current .tracking-step-state,.tracking-step.current.assigned-current .tracking-step-state{background:#dff5e8;color:#167347}
+      .tracking-resolution{display:grid;grid-template-columns:1fr 2fr;gap:12px;margin-top:18px;padding:17px;border-radius:14px;background:#f5f8fb}
+      .tracking-resolution strong,.tracking-resolution span{display:block;font-size:12px}.tracking-resolution strong{color:#52677e;margin-bottom:5px}.tracking-resolution span{color:#78889a}
+      .resolved-success{display:flex;align-items:center;gap:15px;margin-top:18px;padding:18px;border:1px solid #b9e7cb;border-radius:15px;background:#edfaf2}
+      .resolved-success[hidden],.feedback-card[hidden]{display:none}
+      .resolved-success-icon{width:48px;height:48px;flex:none;display:grid;place-items:center;border-radius:50%;background:#d2f2df;color:#16834d;font-size:26px;font-weight:900}
+      .resolved-success h2{margin:0 0 4px;color:#176c43;font-size:19px}.resolved-success p{margin:0;color:#47785e;font-size:12px}
+      .resolved-success>span{margin-left:auto;color:#176c43;font-size:11px;font-weight:800;white-space:nowrap}
+      .feedback-card{margin-top:20px;padding:22px;border:1px solid #dfe8f1;border-radius:17px;background:#fff}
+      .feedback-card-heading h2{margin:5px 0;color:#2c4866}.feedback-card-heading p{margin:0 0 18px;color:#8090a2;font-size:12px}
+      .feedback-label{display:block;margin:14px 0 8px;color:#40566e;font-size:12px;font-weight:800}
+      .star-rating{display:flex;gap:7px}.star-rating button{border:0;background:transparent;color:#d5dce5;font-size:31px;cursor:pointer;padding:0 2px}.star-rating button.selected{color:#e5a51b}
+      .rating-caption{margin:5px 0;color:#8491a1;font-size:11px}
+      .feedback-card textarea{width:100%;box-sizing:border-box;padding:13px;border:1px solid #dce5ee;border-radius:11px;resize:vertical;font:inherit;font-size:13px;outline:none}.feedback-card textarea:focus{border-color:#6796c2;box-shadow:0 0 0 3px #eaf3fb}
+      .feedback-submit-row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:12px}
+      .feedback-submit-row span{font-size:12px;color:#64788e}.feedback-submit-btn{border:0;border-radius:10px;padding:12px 18px;background:#285782;color:#fff;font-weight:800;cursor:pointer}.feedback-submit-btn:disabled{opacity:.45;cursor:not-allowed}
+      @media(max-width:900px){.tracking-step-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.tracking-details-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+      @media(max-width:600px){.tracking-board{padding:18px}.tracking-summary{flex-direction:column}.tracking-summary-date{border-left:0;border-top:1px solid #ffffff40;padding:12px 0 0}.tracking-details-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.tracking-step-grid{grid-template-columns:1fr}.tracking-step{min-height:0}.tracking-resolution{grid-template-columns:1fr}.resolved-success{align-items:flex-start;flex-wrap:wrap}.resolved-success>span{margin-left:63px}.tracking-heading{align-items:flex-start;flex-direction:column}}
+    </style>
+
+</head>
+
+<body class="student-app">
+
+    <aside class="sidebar">
+        <div class="logo">
+            <h2>Smart Complaint</h2>
+        </div>
+
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="submit-complaint.html">Submit Complaint</a>
+            <a href="my-complaints.html">My Complaints</a>
+            <a href="complaint-status.html" class="active">Complaint Status</a>
+            <a href="complaint-history.html">Complaint History</a>
+            <a href="profile.html">Profile</a>
+            <a href="#" onclick="logout(); return false;">Logout</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="top-header">
+            <div>
+                <h1>Complaint Status</h1>
+                <p>Track the progress of your complaint</p>
+            </div>
+
+            <div class="student-info">Student</div>
+        </header>
+
+        <section class="complaint-form tracking-board">
+            <div class="tracking-heading">
+                <div>
+                    <span class="tracking-eyebrow">COMPLAINT TRACKING</span>
+                    <h2 class="section-title">Your complaint journey</h2>
+                    <p id="statusMessage">Select a complaint from My Complaints to view its progress.</p>
+                </div>
+                <span id="statusBadge" class="tracking-status">Awaiting details</span>
+            </div>
+
+            <div class="tracking-summary">
+                <div class="tracking-summary-main">
+                    <span>COMPLAINT REFERENCE</span>
+                    <strong id="statusComplaintId">—</strong>
+                    <p id="statusDescription">Complaint details will appear here.</p>
+                </div>
+                <div class="tracking-summary-date">
+                    <span>SUBMITTED ON</span>
+                    <strong id="submittedDate">—</strong>
+                </div>
+            </div>
+
+            <div class="tracking-details-grid">
+                <div><span>Category</span><strong id="statusCategory">—</strong></div>
+                <div><span>Priority</span><strong id="statusPriority">—</strong></div>
+                <div><span>Floor</span><strong id="statusFloor">—</strong></div>
+                <div><span>Room Number</span><strong id="statusRoom">—</strong></div>
+                <div><span>Current Status</span><strong id="statusValue">—</strong></div>
+            </div>
+
+            <div class="assigned-staff-card">
+                <div class="assigned-staff-icon">♙</div>
+                <div class="assigned-staff-copy">
+                    <span>ASSIGNED STAFF</span>
+                    <strong id="statusStaffName">Staff not assigned yet</strong>
+                    <small id="statusStaffRole">Staff details will appear after assignment.</small>
+                </div>
+                <span id="staffAssignmentBadge" class="staff-assignment-badge">Not assigned</span>
+            </div>
+
+            <section class="tracking-progress-section">
+                <div class="tracking-section-heading">
+                    <div><span class="tracking-eyebrow">LIVE UPDATES</span><h2>Complaint progress</h2></div>
+                    <span id="progressCount" class="progress-count">0 / 5 completed</span>
+                </div>
+
+                <div class="tracking-step-grid">
+                    <article class="tracking-step" id="stepSubmitted">
+                        <div class="tracking-step-number">01</div>
+                        <div class="tracking-step-icon">✓</div>
+                        <h3>Complaint Submitted</h3>
+                        <p>Complaint successfully saved in the system.</p>
+                        <span class="tracking-step-state">Waiting</span>
+                    </article>
+                    <article class="tracking-step" id="stepPending">
+                        <div class="tracking-step-number">02</div>
+                        <div class="tracking-step-icon">◷</div>
+                        <h3>Pending</h3>
+                        <p>Waiting for admin review and action.</p>
+                        <span class="tracking-step-state">Waiting</span>
+                    </article>
+                    <article class="tracking-step" id="stepAssigned">
+                        <div class="tracking-step-number">03</div>
+                        <div class="tracking-step-icon">♙</div>
+                        <h3>Staff Assigned</h3>
+                        <p id="assignedStepNote">A staff member will be assigned.</p>
+                        <span class="tracking-step-state">Waiting</span>
+                    </article>
+                    <article class="tracking-step" id="stepProgress">
+                        <div class="tracking-step-number">04</div>
+                        <div class="tracking-step-icon">⚙</div>
+                        <h3>In Progress</h3>
+                        <p>Staff is working to resolve the complaint.</p>
+                        <span class="tracking-step-state">Waiting</span>
+                    </article>
+                    <article class="tracking-step" id="stepResolved">
+                        <div class="tracking-step-number">05</div>
+                        <div class="tracking-step-icon">★</div>
+                        <h3>Resolved</h3>
+                        <p>Complaint has been successfully completed.</p>
+                        <span class="tracking-step-state">Waiting</span>
+                    </article>
+                </div>
+            </section>
+
+            <div class="tracking-resolution" id="resolutionPanel">
+                <div><strong>Last updated</strong><span id="lastUpdated">—</span></div>
+                <div><strong>Resolution note</strong><span id="resolutionNote">No resolution note yet.</span></div>
+            </div>
+
+            <div class="resolved-success" id="resolvedSuccess" hidden>
+                <div class="resolved-success-icon">✓</div>
+                <div><h2>Complaint Resolved!</h2><p>Your complaint has been successfully completed. Thank you for your patience.</p></div>
+                <span id="resolvedDate">Completed</span>
+            </div>
+
+            <section class="feedback-card" id="feedbackSection" hidden>
+                <div class="feedback-card-heading">
+                    <span class="tracking-eyebrow">STUDENT EXPERIENCE</span>
+                    <h2>How was our service?</h2>
+                    <p>Your feedback helps us improve campus services.</p>
+                </div>
+                <label class="feedback-label">Your star rating</label>
+                <div class="star-rating" id="feedbackStars" role="radiogroup" aria-label="Rate from one to five stars">
+                    <button type="button" data-rating="1" aria-label="1 star">★</button>
+                    <button type="button" data-rating="2" aria-label="2 stars">★</button>
+                    <button type="button" data-rating="3" aria-label="3 stars">★</button>
+                    <button type="button" data-rating="4" aria-label="4 stars">★</button>
+                    <button type="button" data-rating="5" aria-label="5 stars">★</button>
+                </div>
+                <p id="ratingCaption" class="rating-caption">Select a rating from 1 to 5.</p>
+                <label class="feedback-label" for="feedbackComment">Write your feedback</label>
+                <textarea id="feedbackComment" maxlength="1000" rows="4" placeholder="Tell us about your experience with the complaint resolution..."></textarea>
+                <div class="feedback-submit-row">
+                    <span id="feedbackMessage" role="status"></span>
+                    <button class="feedback-submit-btn" id="feedbackBtn" type="button" disabled>Submit Feedback</button>
+                </div>
+            </section>
+        </section>
+
+    </main>
+
+    <script src="app.js?v=20261110-tracking-feedback"></script>
+
+
+
+</body>
+</html>

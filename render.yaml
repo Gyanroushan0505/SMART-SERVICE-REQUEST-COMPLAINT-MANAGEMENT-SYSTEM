@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: smart-complaint-management
+    runtime: docker
+    plan: free
+    healthCheckPath: /admin-login.html
+    envVars:
+      - key: DB_URL
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false

@@ -1,0 +1,22 @@
+@relation hostel_complaints
+@attribute description string
+@attribute category {Electrical,Plumbing,Cleaning,Furniture,Internet,Other}
+@data
+'light bulb not working and power outage',Electrical
+'fan is broken and switch sparks',Electrical
+'no electricity in room',Electrical
+'water tap leaking and pipe broken',Plumbing
+'water supply stopped in bathroom',Plumbing
+'blocked drain and leaking faucet',Plumbing
+'room is dirty and garbage not collected',Cleaning
+'bathroom cleaning required and floor dirty',Cleaning
+'corridor has waste and bad smell',Cleaning
+'bed broken and chair damaged',Furniture
+'cupboard door broken and table unstable',Furniture
+'mattress and desk need repair',Furniture
+'wifi internet not connecting and network slow',Internet
+'hostel wifi disconnected',Internet
+'internet router is not working',Internet
+'please help with another hostel issue',Other
+'need general maintenance assistance',Other
+'problem in hostel room',Other

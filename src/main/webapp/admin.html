@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Smart Complaint</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css?v=20261109-mlfeedback2">
+</head>
+<body class="admin-page">
+  <aside class="admin-sidebar">
+    <a class="admin-brand" href="admin.html"><span class="brand-mark">SC</span><span>Smart<span class="brand-light">Complaint</span><small>ADMINISTRATION</small></span></a>
+    <div class="nav-caption">WORKSPACE</div>
+    <nav class="admin-nav">
+      <a class="active" href="admin.html"><span>▦</span> Overview</a>
+      <a href="#complaints"><span>▤</span> Manage Complaints</a>
+      <a href="#createStaff"><span>＋</span> Add Staff</a>
+      <a href="#staff"><span>♙</span> Staff Members</a>
+      <a href="#feedback"><span>☆</span> User Feedback</a>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="secure-card"><span class="secure-icon">✓</span><div><b>System protected</b><small>Admin access only</small></div></div>
+      <a class="logout-link" href="#" onclick="logout(); return false;"><span>↪</span> Logout</a>
+    </div>
+  </aside>
+
+  <main class="admin-main">
+    <header class="admin-topbar">
+      <div class="mobile-brand">Smart Complaint</div>
+      <div class="breadcrumb">Workspace <span>/</span> <b>Overview</b></div>
+      <div class="topbar-right"><span class="live-dot"></span><span class="system-status">System online</span><div class="admin-avatar">A</div><div class="admin-identity"><b id="adminName">Administrator</b><small>Administrator</small></div></div>
+    </header>
+
+    <section class="welcome-row">
+      <div><div class="eyebrow">ADMIN CONTROL CENTER</div><h1>Dashboard overview</h1><p>Monitor complaints, coordinate staff and improve campus services.</p></div>
+      <a class="primary-action" href="#complaints">View complaints <span>→</span></a>
+    </section>
+
+    <section class="stats-grid" id="adminStats">
+      <article class="stat-card stat-total"><div class="stat-top"><span>Total complaints</span><span class="stat-icon">▤</span></div><div class="stat-number" id="totalCount">—</div><div class="stat-foot">All submitted requests</div><div class="stat-accent"></div></article>
+      <article class="stat-card stat-pending"><div class="stat-top"><span>Pending</span><span class="stat-icon">◷</span></div><div class="stat-number" id="pendingCount">—</div><div class="stat-foot">Awaiting attention</div><div class="stat-accent"></div></article>
+      <article class="stat-card stat-progress"><div class="stat-top"><span>In progress</span><span class="stat-icon">↻</span></div><div class="stat-number" id="progressCount">—</div><div class="stat-foot">Currently being handled</div><div class="stat-accent"></div></article>
+      <article class="stat-card stat-resolved"><div class="stat-top"><span>Resolved</span><span class="stat-icon">✓</span></div><div class="stat-number" id="resolvedCount">—</div><div class="stat-foot">Successfully completed</div><div class="stat-accent"></div></article>
+    </section>
+
+    <section class="admin-panel" id="complaints">
+      <div class="panel-heading"><div><div class="eyebrow">SERVICE REQUESTS</div><h2>Manage complaints</h2><p>Review requests, assign staff and update complaint status.</p></div><span class="panel-chip">Live records</span></div>
+      <div class="table-container admin-table-wrap"><table class="admin-table"><thead><tr><th>COMPLAINT ID</th><th>STUDENT</th><th>CATEGORY / DESCRIPTION</th><th>PRIORITY</th><th>ML PREDICTION</th><th>STATUS / NOTE</th><th>ASSIGN STAFF</th><th>ACTION</th></tr></thead><tbody id="adminComplaints"><tr><td colspan="8">Loading complaints...</td></tr></tbody></table></div>
+    </section>
+
+    <section class="admin-panel" id="createStaff">
+      <div class="panel-heading"><div><div class="eyebrow">TEAM MANAGEMENT</div><h2>Create staff account</h2><p>Add a staff member who can take care of assigned complaints.</p></div><span class="panel-chip">New member</span></div>
+      <form id="createStaffForm" class="staff-form-grid">
+        <div class="form-group"><label for="staffName">Full name</label><input type="text" id="staffName" name="staffName" placeholder="Enter staff full name" required></div>
+        <div class="form-group"><label for="staffId">Staff ID</label><input type="text" id="staffId" name="staffId" placeholder="Enter unique staff ID" required></div>
+        <div class="form-group"><label for="staffEmail">Email address</label><input type="email" id="staffEmail" name="staffEmail" placeholder="name@example.com" required></div>
+        <div class="form-group"><label for="staffPassword">Temporary password</label><input type="password" id="staffPassword" name="staffPassword" placeholder="Minimum 8 characters" minlength="8" autocomplete="new-password" required></div>
+        <div class="form-group"><label for="staffFloor">Assigned floor <span class="optional">(optional)</span></label><input type="text" id="staffFloor" name="staffFloor" placeholder="e.g. Floor 2"></div>
+        <div class="staff-submit-wrap"><p id="staffFormMessage" role="status" aria-live="polite"></p><button class="admin-button" type="submit">＋ Create staff account</button></div>
+      </form>
+    </section>
+
+    <section class="admin-panel" id="staff">
+      <div class="panel-heading"><div><div class="eyebrow">YOUR TEAM</div><h2>Staff members</h2><p>Staff accounts registered in the system.</p></div><span class="panel-chip">Team directory</span></div>
+      <div id="staffList" class="staff-list">Loading staff members...</div>
+    </section>
+
+    <section class="admin-panel" id="feedback">
+      <div class="panel-heading"><div><div class="eyebrow">STUDENT EXPERIENCE</div><h2>User feedback</h2><p>Ratings and comments submitted after complaint resolution.</p></div><span class="panel-chip">Feedback</span></div>
+      <div class="table-container admin-table-wrap"><table class="admin-table"><thead><tr><th>COMPLAINT ID</th><th>STUDENT</th><th>ASSIGNED STAFF</th><th>RATING</th><th>FEEDBACK</th><th>SUBMITTED AT</th></tr></thead><tbody id="adminFeedback"><tr><td colspan="6">Loading feedback...</td></tr></tbody></table></div>
+    </section>
+    <footer class="admin-footer">© 2026 Smart Complaint Management System <span>Admin workspace</span></footer>
+  </main>
+  <script src="app.js?v=20261110-tracking-feedback"></script>
+</body>
+</html>

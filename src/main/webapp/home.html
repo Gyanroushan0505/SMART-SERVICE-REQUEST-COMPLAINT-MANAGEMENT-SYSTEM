@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Smart Complaint Management System</title>
+    <link rel="stylesheet" href="style.css?v=20261110-student-ui">
+</head>
+
+<body class="student-app">
+    <aside class="sidebar">
+        <div class="logo">
+            <h2>Smart Complaint</h2>
+        </div>
+        <nav>
+            <a href="home.html" class="active">Home</a>
+            <a href="submit-complaint.html">Submit Complaint</a>
+            <a href="my-complaints.html">My Complaints</a>
+            <a href="complaint-status.html">Complaint Status</a>
+            <a href="complaint-history.html">Complaint History</a>
+            <a href="profile.html">Profile</a>
+            <a href="#" onclick="logout(); return false;">Logout</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-header">
+            <div>
+                <h1>Welcome Back!</h1>
+                <p>Smart Service Request &amp; Complaint Management System</p>
+            </div>
+            <div class="user" id="loggedInUser">Loading...</div>
+        </header>
+
+        <section class="welcome-card">
+            <h2>Manage Your Complaints Easily</h2>
+            <p>Submit complaints, track their status and get smart predictions for faster resolution.</p>
+            <a href="submit-complaint.html" class="btn">+ Submit Complaint</a>
+        </section>
+
+        <!-- Logged-in user's complaint statistics -->
+        <section class="stats">
+            <div class="stat-card">
+                <span></span>
+                <h3>Total Complaints</h3>
+                <strong id="totalComplaints">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span></span>
+                <h3>Pending</h3>
+                <strong id="pendingComplaints">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span></span>
+                <h3>In Progress</h3>
+                <strong id="progressComplaints">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span></span>
+                <h3>Resolved</h3>
+                <strong id="resolvedComplaints">0</strong>
+            </div>
+        </section>
+
+        <section class="dashboard-grid">
+            <div class="dashboard-card">
+                <h2>Quick Actions</h2>
+                <a href="submit-complaint.html">Submit New Complaint</a>
+                <a href="my-complaints.html">View My Complaints</a>
+                <a href="complaint-status.html">Check Complaint Status</a>
+            </div>
+
+            <div class="dashboard-card prediction">
+                <h2>Smart Prediction</h2>
+                <p>Our ML system predicts complaint priority and expected resolution time.</p>
+                <div class="prediction-box">
+                    <h3>Smart Prediction</h3>
+                    <p>Submit a complaint to get its prediction.</p>
+                    <p>Category, priority and expected resolution will depend on your complaint.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="recent">
+            <h2>Recent Complaints</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Complaint ID</th>
+                        <th>Category</th>
+                        <th>Room</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="recentComplaintsBody">
+                    <tr>
+                        <td colspan="4">Loading complaints...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Shared application JavaScript -->
+    <script src="app.js?v=20261109-student-redesign"></script>
+
+    <!-- Dashboard report -->
+    <script>
+    (async function loadDashboard() {
+        const $ = id => document.getElementById(id);
+
+        const totalEl = $("totalComplaints");
+        const pendingEl = $("pendingComplaints");
+        const progressEl = $("progressComplaints");
+        const resolvedEl = $("resolvedComplaints");
+        const userEl = $("loggedInUser");
+        const recentBody = $("recentComplaintsBody");
+
+        function showMessage(message) {
+            recentBody.replaceChildren();
+            const row = document.createElement("tr");
+            const cell = document.createElement("td");
+            cell.colSpan = 4;
+            cell.textContent = message;
+            row.appendChild(cell);
+            recentBody.appendChild(row);
+        }
+
+        try {
+            // Check the currently logged-in user.
+            const meResponse = await fetch("api/me", {
+                credentials: "same-origin",
+                cache: "no-store"
+            });
+
+            if (meResponse.status === 401) {
+                window.location.href = "html.html";
+                return;
+            }
+
+            if (!meResponse.ok) {
+                throw new Error("Unable to load user information.");
+            }
+
+            const user = await meResponse.json();
+            userEl.textContent =
+                user.name || user.fullName || user.studentId || "User";
+
+            // The backend must filter this list to the logged-in user.
+            const response = await fetch("api/complaints", {
+                credentials: "same-origin",
+                cache: "no-store"
+            });
+
+            if (response.status === 401) {
+                window.location.href = "html.html";
+                return;
+            }
+
+            if (!response.ok) {
+                throw new Error("Unable to load complaints.");
+            }
+
+            const data = await response.json();
+            const complaints = Array.isArray(data)
+                ? data
+                : Array.isArray(data.complaints)
+                    ? data.complaints
+                    : [];
+
+            // Calculate report counts from the API response.
+            let pending = 0;
+            let inProgress = 0;
+            let resolved = 0;
+
+            complaints.forEach(complaint => {
+                const status = String(complaint.status || "")
+                    .trim()
+                    .toUpperCase()
+                    .replace(/[_-]+/g, " ")
+                    .replace(/\s+/g, " ");
+
+                if (status === "PENDING") {
+                    pending++;
+                } else if (status === "IN PROGRESS") {
+                    inProgress++;
+                } else if (status === "RESOLVED") {
+                    resolved++;
+                }
+            });
+
+            totalEl.textContent = complaints.length;
+            pendingEl.textContent = pending;
+            progressEl.textContent = inProgress;
+            resolvedEl.textContent = resolved;
+
+            // Display up to 5 most recent complaints.
+            recentBody.replaceChildren();
+
+            const recentComplaints = [...complaints]
+                .sort((a, b) => {
+                    const idA = Number(a.id) || 0;
+                    const idB = Number(b.id) || 0;
+                    return idB - idA;
+                })
+                .slice(0, 5);
+
+            if (recentComplaints.length === 0) {
+                showMessage("You have not submitted any complaints yet.");
+                return;
+            }
+
+            recentComplaints.forEach(complaint => {
+                const row = document.createElement("tr");
+
+                const idCell = document.createElement("td");
+                idCell.textContent =
+                    complaint.publicId ||
+                    complaint.complaintId ||
+                    complaint.id ||
+                    "N/A";
+
+                const categoryCell = document.createElement("td");
+                categoryCell.textContent = complaint.category || "N/A";
+
+                const roomCell = document.createElement("td");
+                roomCell.textContent =
+                    complaint.roomNumber ||
+                    complaint.room_number ||
+                    "N/A";
+
+                const statusCell = document.createElement("td");
+                statusCell.textContent = complaint.status || "Unknown";
+
+                row.append(idCell, categoryCell, roomCell, statusCell);
+                recentBody.appendChild(row);
+            });
+
+        } catch (error) {
+            console.error("Dashboard loading error:", error);
+
+            totalEl.textContent = "—";
+            pendingEl.textContent = "—";
+            progressEl.textContent = "—";
+            resolvedEl.textContent = "—";
+
+            showMessage("Could not load dashboard data. Please refresh the page.");
+        }
+    })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,1384 @@
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f7fb;
+    color: #1f2937;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================
+   LOGIN PAGE
+========================= */
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    background: linear-gradient(135deg, #e8f0ff, #f7edff);
+}
+
+
+/* Left Side */
+
+.left-section {
+    width: 50%;
+    padding: 80px;
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.left-section h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.left-section h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.left-section p {
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 500px;
+}
+
+.features {
+    margin-top: 35px;
+}
+
+.features div {
+    margin: 15px 0;
+    font-size: 17px;
+}
+
+
+/* Login Section */
+
+.login-section {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    width: 430px;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+}
+
+.login-box h1 {
+    color: #1e3a8a;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #6b7280;
+    margin-bottom: 30px;
+}
+
+
+/* Input */
+
+.login-box label {
+    display: block;
+    margin: 15px 0 7px;
+    font-weight: bold;
+}
+
+.input-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    padding: 0 12px;
+    height: 48px;
+}
+
+.input-box input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 15px;
+}
+
+.show-password {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+
+/* Remember */
+
+.remember {
+    display: flex;
+    justify-content: space-between;
+    margin: 18px 0;
+    font-size: 14px;
+}
+
+.remember a,
+.register a {
+    color: #2563eb;
+}
+
+
+/* Login Button */
+
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+
+    background: linear-gradient(90deg, #2563eb, #7c3aed);
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    opacity: 0.9;
+}
+
+.register {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.ml-text {
+    text-align: center;
+    margin-top: 20px;
+    color: #7c3aed;
+    font-size: 13px;
+}
+
+
+/* =========================
+   HOME PAGE
+========================= */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 250px;
+    height: 100vh;
+
+    background: linear-gradient(180deg, #1e3a8a, #4f46e5);
+    color: white;
+
+    padding: 25px 15px;
+}
+
+.sidebar .logo {
+    text-align: center;
+    font-size: 28px;
+}
+
+.sidebar .logo h2 {
+    font-size: 18px;
+    margin-top: 8px;
+}
+
+
+/* Sidebar Menu */
+
+.sidebar nav {
+    margin-top: 35px;
+}
+
+.sidebar nav a {
+    display: block;
+    color: white;
+
+    padding: 14px 15px;
+    margin: 8px 0;
+
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.sidebar nav a:hover,
+.sidebar nav .active {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
+/* Main */
+
+.main-content {
+    margin-left: 250px;
+    padding: 30px;
+}
+
+
+/* Header */
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.top-header h1 {
+    color: #1e3a8a;
+}
+
+.top-header p {
+    color: #6b7280;
+    margin-top: 5px;
+}
+
+.user {
+    background: white;
+    padding: 12px 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+
+/* Welcome */
+
+.welcome-card {
+    padding: 30px;
+    border-radius: 18px;
+
+    background: linear-gradient(90deg, #2563eb, #7c3aed);
+    color: white;
+
+    margin-bottom: 25px;
+}
+
+.welcome-card h2 {
+    margin-bottom: 10px;
+}
+
+.welcome-card p {
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+
+    background: white;
+    color: #2563eb;
+
+    padding: 12px 20px;
+    border-radius: 9px;
+
+    font-weight: bold;
+}
+
+
+/* Statistics */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    background: white;
+    padding: 22px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+.stat-card span {
+    font-size: 25px;
+}
+
+.stat-card h3 {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 12px 0;
+}
+
+.stat-card strong {
+    font-size: 28px;
+    color: #2563eb;
+}
+
+
+/* Dashboard Cards */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+    margin-bottom: 25px;
+}
+
+.dashboard-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+.dashboard-card h2 {
+    margin-bottom: 20px;
+}
+
+.dashboard-card a {
+    display: block;
+
+    padding: 13px;
+    margin: 10px 0;
+
+    background: #eef4ff;
+    color: #2563eb;
+
+    border-radius: 8px;
+}
+
+.prediction-box {
+    padding: 18px;
+    background: #f3e8ff;
+    border-radius: 12px;
+}
+
+.prediction-box p {
+    margin: 8px 0;
+}
+
+
+/* Recent Complaints */
+
+.recent {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+.recent h2 {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 13px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+    color: #374151;
+    background: #f9fafb;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .login-container {
+        flex-direction: column;
+    }
+
+    .left-section,
+    .login-section {
+        width: 100%;
+    }
+
+    .left-section {
+        padding: 40px;
+    }
+
+    .login-box {
+        margin: 30px 15px;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* Submit Complaint Form */
+
+.complaint-form {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 800px;
+    margin-top: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.complaint-form h2 {
+    margin-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+.submit-btn {
+    padding: 13px 25px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: #1d4ed8;
+}
+/* Complaint Progress */
+
+.status-progress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+    width: 100%;
+}
+
+.status-step {
+    text-align: center;
+    min-width: 120px;
+}
+
+.status-circle {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #ddd;
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.status-step.active .status-circle {
+    background: #2563eb;
+    color: white;
+}
+
+.status-step p {
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.status-line {
+    height: 4px;
+    width: 100px;
+    background: #ddd;
+}
+
+/* Smart Prediction */
+
+.prediction-box {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f1f5ff;
+    border-radius: 12px;
+    border-left: 5px solid #2563eb;
+}
+
+.prediction-box h3 {
+    margin-bottom: 10px;
+}
+
+.prediction-box strong {
+    display: block;
+    margin-top: 10px;
+    font-size: 18px;
+}
+/* Full Width Complaint Form */
+
+.full-width-form {
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.full-width-form form {
+    width: 100%;
+}
+
+.form-group {
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid #d5dce5;
+    border-radius: 8px;
+    font-size: 14px;
+    background: white;
+}
+
+.form-group textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #1769ff;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: #0d55d9;
+}
+/* My Complaints - Full Width */
+
+.my-complaints-section {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.my-complaints-section h2 {
+    margin-bottom: 6px;
+}
+
+.my-complaints-section p {
+    margin-bottom: 20px;
+}
+
+.complaints-table {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.complaints-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: transparent;
+}
+
+.complaints-table th,
+.complaints-table td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #dfe4ea;
+}
+
+.complaints-table th {
+    font-weight: 600;
+}
+
+.complaints-table tr:hover {
+    background: rgba(0, 0, 0, 0.03);
+}
+.dashboard-cards{display:grid;grid-template-columns:repeat(4,minmax(130px,1fr));gap:16px;margin-bottom:20px}.dashboard-cards .complaint-form{margin:0;padding:18px}.dashboard-cards h2{font-size:16px;margin:0 0 10px}.dashboard-cards p{font-size:28px;font-weight:700;margin:0;color:#24469b}@media(max-width:800px){.dashboard-cards{grid-template-columns:repeat(2,minmax(120px,1fr))}}
+
+
+/* =====================================================
+   STUDENT PORTAL – FULL SCREEN MODERN RESPONSIVE DESIGN
+   Shared by Home, Submit Complaint, My Complaints,
+   Complaint Status, Complaint History and Profile.
+===================================================== */
+:root {
+    --portal-ink: #172554;
+    --portal-muted: #64748b;
+    --portal-blue: #2563eb;
+    --portal-purple: #635bdb;
+    --portal-line: #e2e8f0;
+    --portal-surface: #ffffff;
+    --portal-bg: #f4f7fc;
+}
+html, body {
+    min-height: 100%;
+    width: 100%;
+}
+body {
+    background: var(--portal-bg);
+    color: var(--portal-ink);
+}
+.sidebar {
+    width: 258px;
+    padding: 28px 17px;
+    background: linear-gradient(160deg, #172f78 0%, #3048b5 54%, #5145cd 100%);
+    box-shadow: 8px 0 28px rgba(30, 58, 138, .10);
+    z-index: 20;
+}
+.sidebar .logo {
+    font-size: 20px;
+    margin: 0 0 34px;
+    text-align: left;
+    padding: 0 12px 24px;
+    border-bottom: 1px solid rgba(255,255,255,.18);
+}
+.sidebar .logo h2 {
+    font-size: 19px;
+    letter-spacing: .2px;
+    margin: 0;
+    color: #fff;
+}
+.sidebar nav {
+    margin-top: 0;
+}
+.sidebar nav a {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    min-height: 48px;
+    margin: 7px 0;
+    padding: 12px 14px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    color: rgba(255,255,255,.88);
+    font-size: 14px;
+    font-weight: 600;
+    transition: background .2s ease, transform .2s ease, border-color .2s ease;
+}
+.sidebar nav a::before {
+    width: 22px;
+    display: inline-flex;
+    justify-content: center;
+    font-size: 16px;
+}
+.sidebar nav a[href="home.html"]::before { content: "⌂"; }
+.sidebar nav a[href="submit-complaint.html"]::before { content: "＋"; }
+.sidebar nav a[href="my-complaints.html"]::before { content: "▤"; }
+.sidebar nav a[href="complaint-status.html"]::before { content: "◷"; }
+.sidebar nav a[href="complaint-history.html"]::before { content: "◴"; }
+.sidebar nav a[href="profile.html"]::before { content: "◉"; }
+.sidebar nav a[onclick*="logout"], .sidebar nav a[href="html.html"] { margin-top: 24px; }
+.sidebar nav a[onclick*="logout"]::before, .sidebar nav a[href="html.html"]::before { content: "↪"; }
+.sidebar nav a:hover,
+.sidebar nav .active {
+    color: #fff;
+    background: rgba(255,255,255,.17);
+    border-color: rgba(255,255,255,.18);
+    transform: translateX(2px);
+}
+.main-content {
+    margin-left: 258px;
+    width: calc(100% - 258px);
+    min-height: 100vh;
+    padding: 34px clamp(22px, 3vw, 52px) 48px;
+}
+.top-header {
+    width: 100%;
+    min-height: 76px;
+    margin-bottom: 28px;
+    gap: 18px;
+}
+.top-header h1 {
+    color: #172f78;
+    font-size: clamp(25px, 2.2vw, 32px);
+    font-weight: 800;
+    letter-spacing: -.6px;
+}
+.top-header p {
+    color: var(--portal-muted);
+    margin-top: 7px;
+    font-size: 14px;
+}
+.student-info, .user {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    max-width: min(360px, 40vw);
+    min-height: 46px;
+    padding: 10px 18px;
+    border: 1px solid #e4e9f5;
+    border-radius: 14px;
+    background: #fff;
+    color: #243b82;
+    font-weight: 700;
+    box-shadow: 0 5px 18px rgba(30, 58, 138, .06);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.student-info::before, .user::before {
+    content: "👤";
+    display: inline-grid;
+    place-items: center;
+    width: 29px;
+    height: 29px;
+    flex: 0 0 29px;
+    border-radius: 50%;
+    background: #eaf0ff;
+    font-size: 14px;
+}
+.welcome-card {
+    width: 100%;
+    min-height: 205px;
+    padding: clamp(26px, 3vw, 42px);
+    border-radius: 22px;
+    background: radial-gradient(circle at 88% 15%, rgba(255,255,255,.22), transparent 25%),
+                linear-gradient(115deg, #1e40af 0%, #3858d6 55%, #6d55d9 100%);
+    box-shadow: 0 16px 35px rgba(49, 75, 183, .18);
+}
+.welcome-card h2 { font-size: clamp(22px, 2vw, 29px); margin-bottom: 10px; }
+.welcome-card p { max-width: 680px; line-height: 1.7; color: rgba(255,255,255,.9); }
+.welcome-card .btn {
+    border-radius: 11px;
+    padding: 13px 21px;
+    box-shadow: 0 6px 16px rgba(15,23,42,.12);
+}
+.stats {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin: 24px 0;
+}
+.stat-card, .dashboard-card, .recent, .complaint-form,
+.my-complaints-section, .progress-section {
+    border: 1px solid rgba(226,232,240,.9);
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 8px 26px rgba(30, 58, 138, .055);
+}
+.stat-card { padding: 24px; min-height: 140px; }
+.stat-card h3 { color: #64748b; font-size: 13px; font-weight: 700; }
+.stat-card strong { color: #2448b8; font-size: 32px; }
+.dashboard-grid { gap: 20px; }
+.dashboard-card, .recent { padding: 25px; }
+.dashboard-card h2, .recent h2, .my-complaints-section h2 {
+    color: #172f78;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.dashboard-card a {
+    padding: 15px 16px;
+    border: 1px solid #e6edff;
+    border-radius: 11px;
+    font-weight: 600;
+}
+.dashboard-card a:hover { background: #e5edff; }
+.complaint-form, .my-complaints-section {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: clamp(22px, 2.5vw, 34px);
+}
+.complaint-form h2, .my-complaints-section h2 {
+    color: #172f78;
+}
+.complaint-form > p, .my-complaints-section > p {
+    color: #64748b;
+    margin: 6px 0 22px;
+    line-height: 1.6;
+}
+.form-group label {
+    color: #334155;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+.form-group input, .form-group select, .form-group textarea {
+    min-height: 47px;
+    border: 1px solid #dbe3f0;
+    border-radius: 10px;
+    background: #fbfcff;
+    color: #172554;
+    transition: border-color .2s, box-shadow .2s;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: #5273e5;
+    box-shadow: 0 0 0 4px rgba(82,115,229,.11);
+}
+.submit-btn {
+    min-height: 48px;
+    padding: 13px 26px;
+    border-radius: 11px;
+    background: linear-gradient(100deg, #2563eb, #6255d9);
+    box-shadow: 0 7px 17px rgba(37,99,235,.18);
+}
+.submit-btn:hover { background: linear-gradient(100deg, #1d4ed8, #5145c8); }
+table { min-width: 720px; }
+th {
+    padding: 15px 14px;
+    background: #f3f6ff;
+    color: #344779;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .45px;
+}
+td { padding: 15px 14px; color: #475569; font-size: 14px; }
+tbody tr:hover { background: #f8faff; }
+.complaints-table, .table-container { width: 100%; overflow-x: auto; border-radius: 12px; }
+.profile-icon { display: none; }
+
+/* Profile: spacious two-column student details card */
+.complaint-form:has(#profileStudentId) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 26px;
+    row-gap: 2px;
+    align-items: end;
+}
+.complaint-form:has(#profileStudentId) h2,
+.complaint-form:has(#profileStudentId) > p,
+.complaint-form:has(#profileStudentId) .profile-icon,
+.complaint-form:has(#profileStudentId) button {
+    grid-column: 1 / -1;
+}
+.complaint-form:has(#profileStudentId) h2 { margin-bottom: 4px; }
+.complaint-form:has(#profileStudentId) .form-group { margin-bottom: 18px; }
+.complaint-form:has(#profileStudentId) button { width: 100%; }
+
+/* Full-width form and content sections */
+.full-width-form { width: 100%; max-width: none; }
+.progress-section { padding: 25px; margin-top: 22px; }
+.prediction-box { border: 1px solid #e2e8ff; border-left: 5px solid #536be0; }
+@media (min-width: 1500px) {
+    .main-content { padding-left: 56px; padding-right: 56px; }
+    .stats { gap: 22px; }
+}
+@media (max-width: 1050px) {
+    .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 800px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 16px;
+    }
+    .sidebar .logo { margin-bottom: 12px; padding-bottom: 12px; }
+    .sidebar nav { display: flex; flex-wrap: wrap; gap: 5px; }
+    .sidebar nav a { margin: 0; min-height: 40px; padding: 9px 11px; }
+    .sidebar nav a[onclick*="logout"], .sidebar nav a[href="html.html"] { margin-top: 0; }
+    .main-content { width: 100%; margin-left: 0; padding: 24px 16px 36px; }
+    .top-header { align-items: flex-start; flex-direction: column; }
+    .student-info, .user { max-width: 100%; }
+    .complaint-form:has(#profileStudentId) { grid-template-columns: 1fr; }
+    .complaint-form:has(#profileStudentId) h2,
+    .complaint-form:has(#profileStudentId) > p,
+    .complaint-form:has(#profileStudentId) button { grid-column: 1; }
+}
+@media (max-width: 520px) {
+    .stats { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .stat-card { padding: 16px; min-height: 115px; }
+    .stat-card strong { font-size: 26px; }
+    .welcome-card { padding: 24px; }
+    .complaint-form, .my-complaints-section { padding: 19px; }
+}
+
+
+/* =========================================================
+   STUDENT PORTAL — BLUE GLASS DASHBOARD REDESIGN
+   Scoped to .student-app so admin/staff/login styles remain intact.
+   ========================================================= */
+.student-app {
+    --navy: #082b63;
+    --blue: #0878e8;
+    --sky: #43b8ff;
+    --ink: #102b59;
+    --muted: #637895;
+    --line: #d8e7fb;
+    --panel: rgba(255,255,255,.94);
+    min-height: 100vh;
+    color: var(--ink);
+    background:
+      radial-gradient(ellipse at 85% 0%, rgba(91,190,255,.22), transparent 34%),
+      linear-gradient(135deg,#edf6ff 0%,#f8fbff 48%,#eaf4ff 100%);
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+.student-app a { color: inherit; }
+.student-app .sidebar {
+    width: 252px;
+    padding: 25px 14px;
+    background:
+      radial-gradient(circle at 100% 12%,rgba(98,207,255,.32),transparent 32%),
+      linear-gradient(165deg,#0876c9 0%,#07529e 56%,#063b7d 100%);
+    box-shadow: 8px 0 30px rgba(12,74,145,.13);
+    border-right: 1px solid rgba(255,255,255,.24);
+    z-index: 5;
+}
+.student-app .sidebar:after {
+    content:""; position:absolute; left:-65px; bottom:-90px; width:360px; height:230px;
+    border:1px solid rgba(255,255,255,.16); border-radius:50%;
+    box-shadow:0 0 0 22px rgba(255,255,255,.035),0 0 0 46px rgba(255,255,255,.025);
+    pointer-events:none;
+}
+.student-app .sidebar .logo {
+    position:relative; z-index:1; display:flex; flex-direction:column; align-items:center;
+    margin:2px 0 42px; color:#fff; font-size:initial;
+}
+.student-app .brand-mark {
+    width:62px;height:62px;display:grid;place-items:center;border-radius:19px;
+    font-size:35px;font-weight:900;color:#fff;
+    background:linear-gradient(145deg,#71d8ff,#0874df);
+    border:2px solid rgba(255,255,255,.75);
+    box-shadow:0 8px 22px rgba(0,29,85,.25),inset 0 1px 8px rgba(255,255,255,.45);
+    margin-bottom:13px;
+}
+.student-app .sidebar .logo h2 {font-size:19px;letter-spacing:-.35px;margin:0;font-weight:800}
+.student-app .sidebar .logo span {font-size:13px;color:#d8efff;margin-top:3px}
+.student-app .sidebar nav {margin-top:0;position:relative;z-index:1}
+.student-app .sidebar nav a {
+    display:flex;align-items:center;gap:13px;min-height:51px;
+    color:#eaf6ff;padding:13px 15px;margin:8px 0;border:1px solid transparent;
+    border-radius:15px;font-size:14px;font-weight:650;letter-spacing:.05px;
+    transition:background .2s ease,transform .2s ease,box-shadow .2s ease;
+}
+.student-app .sidebar nav a:before {
+    width:23px;display:inline-grid;place-items:center;font-size:18px;line-height:1;
+}
+.student-app .sidebar nav a:nth-child(1):before {content:"⌂"}
+.student-app .sidebar nav a:nth-child(2):before {content:"➤"}
+.student-app .sidebar nav a:nth-child(3):before {content:"▤"}
+.student-app .sidebar nav a:nth-child(4):before {content:"◷"}
+.student-app .sidebar nav a:nth-child(5):before {content:"◴"}
+.student-app .sidebar nav a:nth-child(6):before {content:"●"}
+.student-app .sidebar nav a:nth-child(7):before {content:"⇥"}
+.student-app .sidebar nav a:hover,.student-app .sidebar nav a.active {
+    color:#fff;background:linear-gradient(100deg,rgba(76,205,255,.42),rgba(255,255,255,.16));
+    border-color:rgba(191,237,255,.52);box-shadow:0 7px 20px rgba(0,34,91,.18);
+    transform:translateX(2px);
+}
+.student-app .main-content {
+    margin-left:252px;min-height:100vh;padding:25px 30px 34px;
+    width:calc(100% - 252px);max-width:none;
+}
+.student-app .top-header {
+    min-height:78px;padding:15px 22px;margin:-25px -30px 25px;
+    background:rgba(255,255,255,.83);backdrop-filter:blur(16px);
+    border-bottom:1px solid #d5e8ff;box-shadow:0 5px 20px rgba(40,104,173,.08);
+    border-radius:0 0 19px 19px;
+}
+.student-app .top-header h1 {font-size:clamp(23px,2vw,30px);font-weight:800;letter-spacing:-.8px;color:#092b63}
+.student-app .top-header h1:after {content:"";display:inline-block;width:7px;height:7px;margin:0 0 3px 7px;border-radius:50%;background:#1d9cff}
+.student-app .top-header p {font-size:14px;color:#647d9e;margin-top:5px}
+.student-app .user,.student-app .student-info {
+    display:flex;align-items:center;gap:10px;background:#eff7ff;color:#0759b1;
+    border:1px solid #d6e9ff;border-radius:30px;padding:11px 17px;
+    font-weight:750;box-shadow:0 4px 12px rgba(22,104,186,.07);
+}
+.student-app .user:before,.student-app .student-info:before {
+    content:"";width:27px;height:27px;border-radius:50%;
+    background:linear-gradient(145deg,#9bdcff,#0878db);
+    box-shadow:inset 0 0 0 5px rgba(255,255,255,.35);
+}
+.student-app .welcome-card {
+    position:relative;overflow:hidden;padding:32px 34px;border-radius:22px;
+    background:linear-gradient(112deg,#0878d5 0%,#0752a7 63%,#063777 100%);
+    box-shadow:0 14px 32px rgba(15,92,171,.19);margin-bottom:22px;
+}
+.student-app .welcome-card:after {
+    content:"";position:absolute;right:-45px;top:-115px;width:330px;height:330px;
+    border:1px solid rgba(255,255,255,.2);border-radius:50%;
+    box-shadow:0 0 0 25px rgba(255,255,255,.05),0 0 0 55px rgba(255,255,255,.04);
+}
+.student-app .welcome-card h2 {font-size:clamp(22px,2.4vw,31px);margin-bottom:9px}
+.student-app .welcome-card p {max-width:650px;color:#e4f4ff;line-height:1.6}
+.student-app .welcome-card .btn {
+    position:relative;z-index:1;display:inline-flex;align-items:center;gap:8px;
+    background:#fff;color:#075db9;border-radius:12px;padding:13px 20px;
+    box-shadow:0 6px 18px rgba(0,24,74,.18);font-weight:800;
+}
+.student-app .stats {grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:22px}
+.student-app .stat-card,.student-app .dashboard-card,.student-app .recent,
+.student-app .complaint-form,.student-app .my-complaints-section,
+.student-app .status-card,.student-app .profile-card {
+    background:var(--panel);border:1px solid #d9e9fb;border-radius:19px;
+    box-shadow:0 7px 22px rgba(31,92,153,.075),inset 0 1px 0 #fff;
+}
+.student-app .stat-card {position:relative;overflow:hidden;padding:20px 21px;border-top:3px solid #54baff}
+.student-app .stat-card:nth-child(2){border-top-color:#ffbf66}
+.student-app .stat-card:nth-child(3){border-top-color:#8b9dff}
+.student-app .stat-card:nth-child(4){border-top-color:#43c99b}
+.student-app .stat-card h3 {font-size:13px;color:#6a7f9c;margin:8px 0}
+.student-app .stat-card strong {font-size:31px;color:#075db7}
+.student-app .dashboard-grid {gap:18px;margin-bottom:22px}
+.student-app .dashboard-card {padding:23px}
+.student-app .dashboard-card h2,.student-app .recent h2 {font-size:20px;color:#0a2e67;margin-bottom:16px}
+.student-app .dashboard-card>a {
+    display:flex;align-items:center;justify-content:space-between;
+    background:#f0f7ff;border:1px solid #deecfc;color:#145ba7;
+    padding:14px 16px;border-radius:12px;font-weight:700;margin:10px 0;
+}
+.student-app .dashboard-card>a:after {content:"›";font-size:23px;color:#1688ed}
+.student-app .dashboard-card>a:hover {background:#e2f2ff;border-color:#a8d5ff}
+.student-app .prediction-box {margin-top:10px;background:linear-gradient(135deg,#eff8ff,#eaf3ff);border:1px solid #d7e9ff;border-left:4px solid #1688e8}
+.student-app .recent {padding:22px;overflow:hidden}
+.student-app .recent h2 {margin-bottom:15px}
+.student-app table {border-collapse:separate;border-spacing:0;width:100%;font-size:13px}
+.student-app th {background:#e8f3ff;color:#173b70;font-weight:800;white-space:nowrap}
+.student-app th:first-child {border-radius:10px 0 0 10px}
+.student-app th:last-child {border-radius:0 10px 10px 0}
+.student-app th,.student-app td {padding:13px 14px;border-bottom:1px solid #e8eff8;text-align:left}
+.student-app td {color:#19365f;background:rgba(255,255,255,.7)}
+.student-app tbody tr:hover td {background:#f0f8ff}
+.student-app .complaint-form,.student-app .my-complaints-section {width:100%;max-width:none;margin:0;padding:26px}
+.student-app .complaint-form h2,.student-app .my-complaints-section h2 {font-size:22px;color:#0b3472;margin-bottom:8px}
+.student-app .complaint-form>p,.student-app .my-complaints-section>p {color:#6b809c;margin-bottom:22px;line-height:1.55}
+.student-app #complaintForm {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 22px}
+.student-app #complaintForm .form-group {margin-bottom:17px;min-width:0}
+.student-app #complaintForm .form-group:nth-last-of-type(1),
+.student-app #complaintForm .form-group:has(textarea),
+.student-app #complaintForm .submit-btn {grid-column:1/-1}
+.student-app .form-group label {font-size:14px;color:#173866;font-weight:750;margin-bottom:8px}
+.student-app .form-group input,.student-app .form-group select,.student-app .form-group textarea {
+    min-height:49px;padding:12px 15px;border:1px solid #d6e5f8;border-radius:12px;
+    background:linear-gradient(180deg,#f9fcff,#f0f6ff);color:#17365f;
+    box-shadow:inset 0 1px 2px rgba(27,83,143,.025);transition:border .2s,box-shadow .2s;
+}
+.student-app .form-group textarea {min-height:120px;resize:vertical}
+.student-app .form-group input:focus,.student-app .form-group select:focus,.student-app .form-group textarea:focus {
+    outline:none;border-color:#4ba8f5;box-shadow:0 0 0 4px rgba(40,145,232,.11);background:#fff;
+}
+.student-app .ml-priority-help {padding:12px 14px;border-radius:12px;background:#fff7e9;color:#986018;border:1px solid #ffe4b7;font-size:13px;line-height:1.5}
+.student-app .submit-btn {
+    min-height:50px;border:0;border-radius:12px;background:linear-gradient(100deg,#219de8,#0752a7);
+    color:#fff;font-weight:800;letter-spacing:.2px;box-shadow:0 7px 16px rgba(8,94,175,.2);
+    cursor:pointer;transition:transform .2s,filter .2s;
+}
+.student-app .submit-btn:hover {filter:brightness(1.06);transform:translateY(-1px)}
+.student-app .complaints-table,.student-app .table-container {width:100%;overflow-x:auto;border:1px solid #e1edfa;border-radius:14px;background:#fff}
+.student-app .complaints-table table,.student-app .table-container table {min-width:760px}
+.student-app .complaints-table th,.student-app .table-container th {background:#e8f3ff}
+.student-app .complaints-table td a,.student-app td a {
+    display:inline-flex;align-items:center;justify-content:center;padding:7px 13px;
+    border-radius:20px;background:#e7f3ff;color:#0873d4;font-weight:750;
+}
+.student-app .profile-icon {width:68px;height:68px;border-radius:22px;background:linear-gradient(145deg,#b9e8ff,#1688df);margin-bottom:15px}
+.student-app .profile-icon:after {content:"♟";display:grid;place-items:center;height:100%;font-size:37px;color:#fff}
+.student-app .status-progress {gap:8px;flex-wrap:wrap}
+.student-app .status-step p {color:#496482}
+.student-app .status-line {border-radius:5px;background:#cfe2f7}
+.student-app .status-step.active .status-circle,.student-app .status-step.done .status-circle {box-shadow:0 5px 13px rgba(22,126,208,.2)}
+.student-app .main-content > section {margin-bottom:22px}
+.student-app .main-content > .complaint-form {margin-top:0}
+@media (min-width:1500px) {
+    .student-app .main-content {padding-left:36px;padding-right:36px}
+    .student-app .top-header {margin-left:-36px;margin-right:-36px;padding-left:36px;padding-right:36px}
+}
+@media (max-width:1050px) {
+    .student-app .sidebar {width:220px}
+    .student-app .main-content {margin-left:220px;width:calc(100% - 220px);padding:22px}
+    .student-app .top-header {margin:-22px -22px 22px}
+    .student-app .stats {grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:760px) {
+    .student-app .sidebar {position:relative;width:100%;height:auto;padding:15px}
+    .student-app .sidebar .logo {margin:0 0 12px}
+    .student-app .brand-mark {width:44px;height:44px;font-size:25px;margin-bottom:7px}
+    .student-app .sidebar .logo h2 {font-size:16px}
+    .student-app .sidebar nav {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}
+    .student-app .sidebar nav a {margin:0;padding:10px;font-size:12px;min-height:42px}
+    .student-app .main-content {margin:0;width:100%;padding:16px}
+    .student-app .top-header {margin:-16px -16px 18px;padding:15px 16px;border-radius:0 0 14px 14px}
+    .student-app .top-header h1 {font-size:22px}
+    .student-app .stats {grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+    .student-app .stat-card {padding:15px}
+    .student-app .dashboard-grid {grid-template-columns:1fr}
+    .student-app #complaintForm {grid-template-columns:1fr}
+    .student-app #complaintForm .form-group,.student-app #complaintForm .submit-btn {grid-column:1}
+    .student-app .complaint-form,.student-app .my-complaints-section,.student-app .recent {padding:17px}
+}
+@media (max-width:420px) {
+    .student-app .stats {grid-template-columns:1fr 1fr}
+    .student-app .sidebar nav {grid-template-columns:1fr 1fr}
+    .student-app .top-header {align-items:flex-start;gap:10px}
+    .student-app .user,.student-app .student-info {padding:8px 10px;font-size:12px}
+}
+
+
+/* =====================================================
+   STUDENT REGISTRATION - MODERN SPLIT LAYOUT
+   Scoped to register.html; other pages keep their design.
+   ===================================================== */
+.register-page {
+    min-height: 100vh;
+    margin: 0;
+    padding: 34px 18px;
+    display: grid;
+    place-items: center;
+    background: #f2f5fa;
+    color: #24344d;
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+.register-shell {
+    width: min(100%, 1040px);
+    min-height: 650px;
+    display: grid;
+    grid-template-columns: .88fr 1.12fr;
+    overflow: hidden;
+    border-radius: 24px;
+    background: #fff;
+    box-shadow: 0 22px 65px rgba(28, 48, 78, .13);
+}
+.register-brand {
+    padding: 54px 42px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    color: #fff;
+    background: linear-gradient(145deg, #24466b 0%, #315f8e 58%, #477ca8 100%);
+}
+.register-brand-mark {
+    width: 54px;
+    height: 54px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 32px;
+    border: 1px solid rgba(255,255,255,.35);
+    border-radius: 16px;
+    background: rgba(255,255,255,.13);
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+.register-eyebrow, .register-step {
+    margin: 0 0 10px;
+    color: #bcd4eb;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+}
+.register-brand h1 {
+    max-width: 390px;
+    margin: 0;
+    color: #fff;
+    font-size: clamp(27px, 3vw, 38px);
+    line-height: 1.2;
+}
+.register-brand-copy {
+    max-width: 340px;
+    margin: 20px 0 28px;
+    color: #dce9f5;
+    font-size: 14px;
+    line-height: 1.8;
+}
+.register-trust {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #e8f3fc;
+    font-size: 13px;
+}
+.register-trust span {
+    width: 24px;
+    height: 24px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(255,255,255,.18);
+}
+.register-panel { padding: 42px clamp(24px, 5vw, 58px); }
+.register-heading h2 {
+    margin: 0 0 7px;
+    color: #203b5b;
+    font-size: 29px;
+}
+.register-heading > p {
+    margin: 0 0 26px;
+    color: #78869a;
+    font-size: 13px;
+}
+.register-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 18px;
+}
+.register-field { min-width: 0; }
+.register-field label {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 7px;
+    color: #344861;
+    font-size: 12px;
+    font-weight: 700;
+}
+.register-field label span {
+    color: #8b98a9;
+    font-size: 10px;
+    font-weight: 500;
+}
+.register-field input, .register-field select {
+    width: 100%;
+    min-height: 45px;
+    box-sizing: border-box;
+    padding: 11px 13px;
+    border: 1px solid #dce4ee;
+    border-radius: 10px;
+    outline: none;
+    background: #fbfcfe;
+    color: #263b54;
+    font: inherit;
+    font-size: 13px;
+    transition: border-color .2s, box-shadow .2s, background .2s;
+}
+.register-field input:focus, .register-field select:focus {
+    border-color: #4b83b8;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(75,131,184,.12);
+}
+.register-password { position: relative; }
+.register-password input { padding-right: 58px; }
+.register-password button {
+    position: absolute;
+    top: 50%;
+    right: 9px;
+    transform: translateY(-50%);
+    border: 0;
+    background: transparent;
+    color: #356b9d;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 700;
+}
+.register-submit {
+    grid-column: 1 / -1;
+    min-height: 48px;
+    margin-top: 5px;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border: 0;
+    border-radius: 11px;
+    background: #285782;
+    color: #fff;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 700;
+    box-shadow: 0 8px 18px rgba(40,87,130,.18);
+}
+.register-submit:hover { background: #1f496f; }
+.register-message {
+    grid-column: 1 / -1;
+    min-height: 17px;
+    margin: -7px 0 0;
+    font-size: 12px;
+}
+.register-login {
+    margin: 20px 0 0;
+    color: #78869a;
+    text-align: center;
+    font-size: 12px;
+}
+.register-login a { color: #285782; font-weight: 700; text-decoration: none; }
+@media (max-width: 760px) {
+    .register-page { padding: 14px; }
+    .register-shell { grid-template-columns: 1fr; }
+    .register-brand { padding: 28px 26px; }
+    .register-brand-mark { margin-bottom: 17px; }
+    .register-brand-copy { margin: 12px 0 16px; }
+    .register-panel { padding: 28px 24px; }
+}
+@media (max-width: 430px) {
+    .register-form { grid-template-columns: 1fr; }
+    .register-submit, .register-message { grid-column: 1; }
+}

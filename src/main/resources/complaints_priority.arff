@@ -1,0 +1,132 @@
+
+@relation hostel_complaint_priority
+
+@attribute description string
+@attribute priority {High,Medium,Low}
+
+@data
+
+% ================= HIGH PRIORITY =================
+
+'fire in hostel room smoke spreading immediately danger',High
+'electric wire sparking and burning smell near bed',High
+'electric shock from switch board dangerous urgent',High
+'water flooding room and spreading quickly',High
+'no drinking water available in entire hostel',High
+'ceiling fan falling loose and may hurt someone',High
+'gas smell and smoke coming from electrical panel',High
+'live wire exposed in corridor dangerous',High
+'main water pipe burst flooding rooms',High
+'person trapped in lift emergency help needed',High
+'power socket sparks when plugged in urgent safety issue',High
+'large water leakage causing floor flooding',High
+'broken glass window about to fall on people',High
+'fire alarm not working during emergency',High
+'severe electrical burning smell in room',High
+'water supply completely stopped for hostel',High
+'ceiling plaster falling and could injure students',High
+'overflowing drain flooding bathroom and corridor',High
+'urgent repair needed exposed electrical cable',High
+'room has smoke and electrical short circuit',High
+'gas leakage in the kitchen',High
+'gas is leaking from the kitchen pipeline',High
+'gas smell coming from kitchen cylinder',High
+'cooking gas cylinder is leaking and dangerous',High
+'leaking gas in hostel kitchen immediate danger',High
+'gas leak detected near kitchen stove',High
+'gas is leaking in the hostel kitchen',High
+'strong smell of cooking gas in kitchen',High
+'fire in kitchen due to gas leakage',High
+'gas pipeline leakage in hostel',High
+'gas cylinder valve leaking',High
+'gas leakage spreading in kitchen',High
+'gas leak can cause explosion',High
+'gas smell in hostel kitchen urgent',High
+'water tank is overflowing and water entering electrical room',High
+'heavy smoke coming from hostel electrical wiring',High
+'student injured due to falling ceiling material',High
+'severe short circuit in hostel distribution board',High
+'fire spreading near hostel staircase',High
+'electrical panel producing sparks and burning smell',High
+'sewage water entering drinking water storage area',High
+'hostel staircase railing is broken and students may fall',High
+'large water pipe burst and flooding hostel rooms',High
+'main entrance emergency exit is blocked during emergency',High
+'kitchen gas cylinder leaking with strong gas smell',High
+'live electrical wire hanging near water leakage',High
+'hostel lift stopped with students trapped inside',High
+'major ceiling collapse risk in occupied student room',High
+
+% ================= MEDIUM PRIORITY =================
+
+'water tap leaking continuously in bathroom',Medium
+'room light not working since yesterday',Medium
+'hostel wifi disconnected and internet unavailable',Medium
+'bed is broken and needs repair',Medium
+'bathroom drain is blocked and water drains slowly',Medium
+'fan is not working properly and makes noise',Medium
+'window lock is damaged and does not close',Medium
+'water cooler is not working today',Medium
+'corridor light is broken and needs replacement',Medium
+'computer lab internet connection keeps dropping',Medium
+'chair leg is damaged and needs fixing',Medium
+'flush is not working in shared bathroom',Medium
+'room switch is not working but no sparks',Medium
+'pipe has a small leak under the sink',Medium
+'hostel washing machine has stopped working',Medium
+'common area door handle is broken',Medium
+'water is dripping from ceiling after rain',Medium
+'room heater is not working in winter',Medium
+'network is very slow in hostel room',Medium
+'cupboard hinge is broken and door will not close',Medium
+'hostel bathroom shower is not working properly',Medium
+'room tube light stopped working',Medium
+'water cooler is making unusual noise',Medium
+'hostel door lock is difficult to operate',Medium
+'computer lab keyboard is not working',Medium
+'room ceiling fan speed is very slow',Medium
+'hostel bathroom flush button is damaged',Medium
+'water purifier is not dispensing water properly',Medium
+'hostel washing area tap is damaged',Medium
+'classroom projector display is blurry',Medium
+'hostel wifi connection disconnects frequently',Medium
+'room cupboard door is not closing properly',Medium
+'corridor electrical light keeps flickering',Medium
+'hostel common room television is not working',Medium
+
+% ================= LOW PRIORITY =================
+
+'please clean dust from my study table',Low
+'room needs routine sweeping and mopping',Low
+'please replace the empty notice board marker',Low
+'one curtain hook is missing in my room',Low
+'need an extra chair for the common room',Low
+'please refill the handwash dispenser',Low
+'wall paint has a small scratch',Low
+'garbage bin needs routine collection tomorrow',Low
+'corridor floor needs regular cleaning',Low
+'please arrange a new door mat',Low
+'room window needs routine dust cleaning',Low
+'need another bedsheet from hostel store',Low
+'common room table needs wiping',Low
+'please change the name label on my door',Low
+'one shelf needs tightening during routine maintenance',Low
+'please provide an extra bucket for the bathroom',Low
+'water bottle stand needs routine cleaning',Low
+'notice board paper should be replaced',Low
+'room curtain needs washing',Low
+'please arrange routine garden cleaning',Low
+'please clean dust from hostel window',Low
+'room wall needs a fresh coat of paint',Low
+'please replace the old room name sticker',Low
+'hostel garden plants need watering',Low
+'please arrange extra dustbin in common room',Low
+'room curtains need regular washing',Low
+'please clean the hostel notice board',Low
+'common room furniture needs dusting',Low
+'please replace faded room number label',Low
+'hostel library books need proper arrangement',Low
+'please provide an extra clothes hanger',Low
+'room door needs routine polishing',Low
+'hostel garden requires routine maintenance',Low
+'please clean the dust from classroom desks',Low

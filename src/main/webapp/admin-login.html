@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101b3d">
+    <title>Admin Portal | Smart Complaint</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="admin-login.css?v=20261109-2">
+</head>
+<body>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+    <header class="topbar">
+        <a class="brand" href="home.html" aria-label="Smart Complaint home">
+            <span class="brand-mark"><i class="fa-solid fa-shield-halved"></i></span>
+            <span class="brand-copy"><strong>SMART<span>COMPLAINT</span></strong><small>MANAGEMENT SYSTEM</small></span>
+        </a>
+        <div class="portal-label"><span class="live-dot"></span> OFFICIAL ADMIN PORTAL</div>
+    </header>
+
+    <main class="page-shell">
+        <section class="welcome-panel">
+            <div class="eyebrow"><span></span> CAMPUS SERVICE MANAGEMENT</div>
+            <h1>Make every<br><em>complaint count.</em></h1>
+            <p class="welcome-text">A smarter way to manage requests, coordinate teams and make campus services better for everyone.</p>
+
+            <div class="feature-list">
+                <div class="feature-item"><span class="feature-icon"><i class="fa-solid fa-inbox"></i></span><span><b>Centralized complaints</b><small>Keep every request organized in one place.</small></span></div>
+                <div class="feature-item"><span class="feature-icon"><i class="fa-solid fa-people-arrows-left-right"></i></span><span><b>Effortless staff assignment</b><small>Send each issue to the right team.</small></span></div>
+                <div class="feature-item"><span class="feature-icon"><i class="fa-solid fa-chart-line"></i></span><span><b>Clear progress tracking</b><small>Monitor resolution from start to finish.</small></span></div>
+            </div>
+
+            <div class="panel-footer"><i class="fa-solid fa-lock"></i> Secure access for authorized administrators only</div>
+            <div class="orb orb-large"></div><div class="orb orb-small"></div>
+        </section>
+
+        <section class="form-side" aria-labelledby="loginTitle">
+            <div class="login-card">
+                <div class="card-icon"><i class="fa-solid fa-user-shield"></i></div>
+                <div class="card-kicker">WELCOME BACK</div>
+                <h2 id="loginTitle">Admin / Warden Login</h2>
+                <p class="card-description">Sign in to access your administration dashboard.</p>
+
+                <form id="adminLoginForm">
+                    <div class="form-group">
+                        <label for="userid">Admin ID or Email</label>
+                        <div class="input-wrap"><i class="fa-regular fa-user"></i><input type="text" id="userid" name="userid" placeholder="Enter your admin ID or email" autocomplete="username" required></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-wrap"><i class="fa-solid fa-key"></i><input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="current-password" required></div>
+                    </div>
+                    <p id="formMessage" class="form-message" role="status" aria-live="polite"></p>
+                    <button class="submit-btn" type="submit"><span>Sign in to Dashboard</span><i class="fa-solid fa-arrow-right"></i></button>
+                </form>
+
+                <div class="divider"><span>OR</span></div>
+                <a class="back-link" href="html.html"><i class="fa-solid fa-arrow-left"></i> Student / Staff Login</a>
+                <p class="security-note"><i class="fa-solid fa-shield-halved"></i> Your session is protected and monitored.</p>
+            </div>
+            <footer class="page-footer">© 2026 Smart Complaint Management System <span>•</span> Administration</footer>
+        </section>
+    </main>
+    <script src="app.js?v=20261020" defer></script>
+</body>
+</html>
